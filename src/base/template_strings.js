@@ -3,10 +3,10 @@ const nombre = 'Alejandro';
 const apellido = 'Alamar';
 
 const nombreCompleto = `${ nombre } ${apellido} ${1+1}`
-console.log(nombreCompleto);
+// console.log(nombreCompleto);
 
-function getSaludo(nombre) {
+export function getSaludo(nombre = 'Alejandro') {
     return 'Hola ' + nombre;
 }
 
-console.log(`Este es un texto: ${getSaludo(nombre)}`);
+// console.log(`Este es un texto: ${getSaludo(nombre)}`);
