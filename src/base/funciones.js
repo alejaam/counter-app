@@ -8,10 +8,7 @@ const saludar2 = (nombre) => {
 
 const saludar3 = (nombre) => `Hola, ${nombre}`;
 
-console.log(saludar2('Goku'));
-console.log(saludar3('Goku'));
-
-const getUser = () => ({
+export const getUser = () => ({
     uid: 'ABC123',
     username: 'ale_jaam'
 });
@@ -23,9 +20,8 @@ console.log(user);
 //  1. Transformar a una función de flecha
 //  2. Tiene que retornar un objeto implicito
 //  3. Pruebas
-const getUsuarioActivo = (nombre) => ({
+export const getUsuarioActivo = (nombre) => ({
     uid: 'ABC986',
     username: nombre
 });
 
-console.log(getUsuarioActivo('Alejandro'));
