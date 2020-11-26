@@ -1,4 +1,4 @@
-import { getHeroById } from './bases/import_export';
+import { getHeroById } from './import_export';
 
 // const promesa = new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -14,7 +14,7 @@ import { getHeroById } from './bases/import_export';
     
 // }).catch(err => console.warn(err));
 
-const getHeroesByIdAsync = (id) => {
+export const getHeroesByIdAsync = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             // console.log('2 segundos después');
