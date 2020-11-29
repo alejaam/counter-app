@@ -2,7 +2,7 @@ const { render } = require("@testing-library/react");
 const { default: PrimeraApp } = require("../PrimeraApp");
 
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, wrapper } from 'enzyme';
 // import PrimeraApp from '../PrimeraApp';
 
 
@@ -14,10 +14,24 @@ describe('Pruebas en <PrimeraApp />', () => {
     //     expect(getByText(saludo)).toBeInTheDocument();
     // })
     test('Debe mostrar <PrimeraApp> correctamente', () => { 
-        const saludo = 'Hola, soy goku'
+        const saludo = 'Hola, soy goku';
         const wrapper = shallow(<PrimeraApp saludo={saludo} />);
         
         expect(wrapper).toMatchSnapshot();
+    });
+
+    test('Debe mostrar el subtitulo enviado por props', () => { 
+        const saludo = 'Hola, soy goku';
+        const subTitulo = 'Soy un subtitulo';
+        const wrapper = shallow(
+            <PrimeraApp
+                saludo={saludo}
+                subtitulo = {subTitulo}
+            />
+        );
+        const textoParrafo = wrapper.find('p').text();
+        console.log(textoParrafo);
+        expect(textoParrafo).toBe(subTitulo);
     });
 
 });
